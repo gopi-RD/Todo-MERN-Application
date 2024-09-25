@@ -23,7 +23,7 @@ const Header =(props)=>{
             const response = await fetch(url, options)
             const data=await response.json()
             await setData(data)
-            await setProfileLetter(data.username[0])
+            await setProfileLetter(data.username[0].toUpperCase())
             console.log(data)
 
 
