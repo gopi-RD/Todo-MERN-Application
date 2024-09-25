@@ -5,6 +5,8 @@ import "./index.css"
 const Header =(props)=>{
 
     const [data,setData]=useState({})
+    const [isOpen,setOpen]=useState(false)
+    const [profileLetter,setProfileLetter]=useState("")
 
     useEffect(()=>{
 
@@ -20,7 +22,8 @@ const Header =(props)=>{
     
             const response = await fetch(url, options)
             const data=await response.json()
-            setData(data)
+            await setData(data)
+            await setProfileLetter(data.username[0])
             console.log(data)
 
 
@@ -38,19 +41,32 @@ const Header =(props)=>{
         history.push("/login")
         
     } 
+    const onChangeProfile=()=>{
+        setOpen(prevState=>({
+            isOpen:!prevState.isOpen
+        }))
+
+    }
+
+   
+    
 
     return (
         <header className="header-top-container"> 
         <nav className="header-container">
             <h1 className="website-logo">Todos</h1> 
             <div className="profile-container">
-                <button className="profile-name-first-letter">P</button>
-
-                <div className="profile-details-container">
+                <button className="profile-name-first-letter"  onClick={onChangeProfile}>{profileLetter}</button>
+                {
+                    isOpen &&  (
+                        <div className="profile-details-container">
                     <span className="profile-name">{data.username}</span>
                     <a  href={`${data.email}`} className="profile-email">{data.email}</a>
                     <button  className="logout-btn" onClick={onLogoutButton}>Logout</button>
                 </div>
+                    )
+                }
+                
            </div>  
         </nav> 
         </header>
