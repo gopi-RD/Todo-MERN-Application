@@ -272,7 +272,7 @@ class TodoList extends Component {
 
 
     render() {
-        const {todoListItem,isPopup,loading}=this.state 
+        const {todoListItem,isPopup,loading,taskname}=this.state 
         const todoLength=todoListItem.length
         return (
             <>
@@ -282,7 +282,7 @@ class TodoList extends Component {
                 <div className="todo-container">
                 <h1 className="task-text">Create Task</h1>
                 <div className="input-container">
-                    <input className="user-text" type="text" placeholder="Add a task" onChange={this.onTaskText} />
+                    <input className="user-text" type="text" value={taskname} placeholder="Add a task" onChange={this.onTaskText} />
                     <button className="add-button" onClick={this.onAddTask}>Add</button>
                 </div>
                 <h1>
