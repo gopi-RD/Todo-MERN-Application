@@ -270,7 +270,8 @@ class TodoList extends Component {
 
 
     render() {
-        const {todoListItem,isPopup,loading}=this.state
+        const {todoListItem,isPopup,loading}=this.state 
+        const todoLength=todoListItem.length
         return (
             <>
                <Header/>
@@ -298,15 +299,26 @@ class TodoList extends Component {
                             </div>
                         ): (
 
-                            todoListItem.map(eachItem =>(
-                                <TodoItem key={eachItem.id} todoDetails={eachItem} 
-                                onUpdateCompleteState={this.onUpdateCompleteState} 
-                                onUpdateInProgressState={this.onUpdateInProgressState}
-                                 onUpdatePendingstate={this.onUpdatePendingstate}
-                                 onUpdateDeleteTodo={this.onUpdateDeleteTodo}
-                                 onUpdateDateTodoItem={this.onUpdateDateTodoItem}
-                                  />
-                            ))
+                                
+                                    todoLength > 0 ? (
+                                        todoListItem.map(eachItem =>(
+                                            <TodoItem key={eachItem.id} todoDetails={eachItem} 
+                                            onUpdateCompleteState={this.onUpdateCompleteState} 
+                                            onUpdateInProgressState={this.onUpdateInProgressState}
+                                             onUpdatePendingstate={this.onUpdatePendingstate}
+                                             onUpdateDeleteTodo={this.onUpdateDeleteTodo}
+                                             onUpdateDateTodoItem={this.onUpdateDateTodoItem}
+                                              />
+                                        ))
+
+                                    ) : (
+                                        <div className="no-task-container">
+                                            <h1>No Task Found</h1>
+                                        </div>
+                                    )
+                                
+
+                           
 
                         )
                        
