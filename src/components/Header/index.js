@@ -38,14 +38,13 @@ const Header =(props)=>{
         history.push("/login")
         
     } 
-    const userName=data.username.slice(0,1).toUpperCase()
 
     return (
         <header className="header-top-container"> 
         <nav className="header-container">
             <h1 className="website-logo">Todos</h1> 
             <div className="profile-container">
-                <button className="profile-name-first-letter">{userName}</button>
+                <button className="profile-name-first-letter">P</button>
 
                 <div className="profile-details-container">
                     <span className="profile-name">{data.username}</span>
