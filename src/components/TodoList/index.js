@@ -69,6 +69,7 @@ class TodoList extends Component {
         const data=await response.json() 
         console.log(data) 
         this.getTodoList()
+        this.setState({taskname:""})
     }
 
     onTaskText=(event)=>{
