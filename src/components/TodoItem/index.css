@@ -1,0 +1,137 @@
+
+.todo-each-item{
+
+display: flex;
+align-items: center;
+padding: 10px;
+
+}
+
+.todo-each-item:hover{
+    background-color: #f5f5f5;
+    cursor: pointer;
+    color: #333;
+    border-radius: 12px;
+    margin: 10px;
+  
+}
+
+.todo-name{
+    font-size:22px;
+    font-weight:bold;
+    margin-bottom:10px;
+    color:#333;
+    width:25%;
+    margin-right: 5%;
+}
+.todo-status-container{
+    width:30%;
+    margin-right:20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.todo-status{
+    font-size:18px;
+    font-weight:bold;
+}
+.btn-container{
+    display: flex;
+    align-items: center;
+}
+.pending-btn{
+    display: none;
+}
+.in-progress-btn{
+    display: none;
+   
+}
+.completed-btn{
+    display: none;
+}
+
+.active-pending-btn{
+    display:flex;
+    background-color: #f8312f;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 15px;
+    cursor: pointer;
+    margin: 6px;
+}
+.active-in-progress-btn{
+    display:flex;
+    background-color: #ff9f43;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 15px;
+    cursor: pointer;
+    margin: 6px;
+}
+.active-completed-btn{
+    display:flex;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 15px;
+    cursor: pointer;
+    margin: 6px;
+}
+.todo-each-item :hover {
+    .pending-btn{
+        display: flex;
+        margin: 6px;
+        border-radius: 6px;
+        padding: 6px;
+
+    }
+    .in-progress-btn{
+        display: flex;
+        margin: 6px;
+        border-radius: 6px;
+        padding: 6px;
+    }
+    .completed-btn{
+        display: flex;
+        margin: 6px;
+        border-radius: 6px;
+        padding: 6px;
+    }   
+}
+.todo-action-container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.edit{
+    color:#000000;
+    margin-right: 20px;
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+}
+.edit:hover{
+    color:darkgreen;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+.delete{
+    color:#000000;
+    background-color: transparent;
+    border: none;
+    font-size: 16px;
+}
+.delete:hover{
+    color:red;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 50%;
+    font-weight: bold;
+}
